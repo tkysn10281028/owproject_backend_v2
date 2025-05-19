@@ -1,8 +1,13 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+mvnw
+mvnw.cmd
 !**/src/main/**/target/
 !**/src/test/**/target/
+.gitignore
+.gitattributes
+退避
 
 ### STS ###
 .apt_generated
