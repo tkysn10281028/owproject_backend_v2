@@ -14,7 +14,7 @@ import java.util.Map;
 @RequestMapping("${api.base-path}")
 public class JwtRetrieveController {
     @GetMapping("/jwt")
-    public ResponseEntity<Map<String, String>> jwtRetrive(HttpSession session) {
+    public ResponseEntity<Map<String, String>> jwtRetrieve(HttpSession session) {
         var jwt = RedisUtil.get("jwt");
         if(jwt != null) {
             return ResponseEntity.ok(Map.of("jwt", jwt));

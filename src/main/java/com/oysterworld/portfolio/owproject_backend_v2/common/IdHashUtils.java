@@ -11,7 +11,7 @@ public class IdHashUtils {
             var hash = digest.digest(id.getBytes(StandardCharsets.UTF_8));
             return bytesToHex(hash);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("No Algorhithm for Hash -> Error hashing user ID", e);
+            throw new RuntimeException("No Algorithm for Hash -> Error hashing user ID", e);
         }
     }
 
