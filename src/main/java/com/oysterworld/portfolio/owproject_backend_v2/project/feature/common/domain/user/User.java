@@ -5,12 +5,14 @@ import com.oysterworld.portfolio.owproject_backend_v2.exception.OwBoundaryExcept
 import com.oysterworld.portfolio.owproject_backend_v2.exception.OwFormatException;
 import com.oysterworld.portfolio.owproject_backend_v2.project.common.domain.DomainConstants;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.regex.Pattern;
 
 @Getter
 public class User {
-    private UserId userId;
+    @Setter
+    private UserId id;
     private String name;
     private String emailAddress;
     private Integer age;
@@ -49,5 +51,9 @@ public class User {
         if (gender == null) {
             throw new OwBlankException.NullValueException("User.gender");
         }
+        this.name = name;
+        this.emailAddress = emailAddress;
+        this.age = age;
+        this.gender = gender;
     }
 }

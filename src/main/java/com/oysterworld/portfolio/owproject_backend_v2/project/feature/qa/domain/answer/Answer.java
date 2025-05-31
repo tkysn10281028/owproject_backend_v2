@@ -9,7 +9,7 @@ import lombok.Getter;
 
 @Getter
 public class Answer {
-    private AnswerId answerId;
+    private AnswerId id;
     private QuestionId questionId;
     private UserId userId;
     private String content;
@@ -27,5 +27,8 @@ public class Answer {
             throw new OwBoundaryException.StringLenTooLongException("Answer.content"
                     , DomainConstants.MAX_LENGTH_ANSWER_CONTENT);
         }
+        this.questionId = questionId;
+        this.userId = userId;
+        this.content = content;
     }
 }

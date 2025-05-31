@@ -10,4 +10,10 @@ public class OwFormatException extends IllegalArgumentException {
             super(String.format("文字列の形式が指定フォーマットと一致しません. 該当項目：%s 指定形式：%s", itemName, formatName));
         }
     }
+
+    public static class NotNumericException extends OwFormatException {
+        public NotNumericException(String itemName) {
+            super(String.format("文字列が数字形式ではありません. 該当項目：%s", itemName));
+        }
+    }
 }

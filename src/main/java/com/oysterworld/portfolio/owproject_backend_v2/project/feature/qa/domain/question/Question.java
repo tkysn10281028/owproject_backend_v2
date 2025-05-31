@@ -5,10 +5,12 @@ import com.oysterworld.portfolio.owproject_backend_v2.exception.OwBoundaryExcept
 import com.oysterworld.portfolio.owproject_backend_v2.project.common.domain.DomainConstants;
 import com.oysterworld.portfolio.owproject_backend_v2.project.feature.common.domain.user.UserId;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public class Question {
-    private QuestionId questionId;
+    @Setter
+    private QuestionId id;
     private UserId userId;
     private String title;
     private String content;
@@ -34,5 +36,8 @@ public class Question {
             throw new OwBoundaryException.StringLenTooLongException("Question.content"
                     , DomainConstants.MAX_LENGTH_QUESTION_CONTENT);
         }
+        this.userId = userId;
+        this.title = title;
+        this.content = content;
     }
 }
