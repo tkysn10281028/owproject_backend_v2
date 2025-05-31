@@ -8,9 +8,9 @@ public class QuestionValidateService {
     private QuestionRepository questionRepository;
 
     public void isQuestionDuplicate(Question question) {
-        if (questionRepository.existsById(question.getId())) {
-            throw new OwDuplicateException.HasDuplicateDataException("Question.QuestionId"
-                    , String.valueOf(question.getId().getValue()));
+        if (questionRepository.existsByIdAndUserId(question.getId(), question.getUserId())) {
+            throw new OwDuplicateException.HasDuplicateDataException("Question.QuestionId & Question.userId"
+                    , question.getId().getValue() + " & " + question.getUserId().getValue());
         }
         if (questionRepository.existsByTitle(question.getTitle())) {
             throw new OwDuplicateException.HasDuplicateDataException("Question.title", question.getTitle());

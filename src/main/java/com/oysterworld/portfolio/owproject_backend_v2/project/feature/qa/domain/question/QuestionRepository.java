@@ -13,11 +13,13 @@ public interface QuestionRepository {
 
     List<Question> findByTitle(String title);
 
+    Integer findMaxIdByUserId(UserId userId);
+
     void save(Question question);
 
     void delete(Question question);
 
-    Boolean existsById(QuestionId id);
+    Boolean existsByIdAndUserId(QuestionId id, UserId userId);
 
     Boolean existsByTitle(String title);
 }

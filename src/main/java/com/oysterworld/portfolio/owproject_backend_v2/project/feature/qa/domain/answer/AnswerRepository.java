@@ -11,9 +11,11 @@ public interface AnswerRepository {
 
     List<Answer> findByUserId(UserId userId);
 
+    Integer findMaxIdByQuestionId(QuestionId questionId);
+
     void save(Answer answer);
 
-    Boolean existsById(AnswerId id);
+    Boolean existsByIdAndQuestionId(AnswerId id, QuestionId questionId);
 
     Boolean existsByQuestionIdAndUserId(QuestionId questionId, UserId userId);
 }

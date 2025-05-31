@@ -6,9 +6,11 @@ import com.oysterworld.portfolio.owproject_backend_v2.project.common.domain.Doma
 import com.oysterworld.portfolio.owproject_backend_v2.project.feature.common.domain.user.UserId;
 import com.oysterworld.portfolio.owproject_backend_v2.project.feature.qa.domain.question.QuestionId;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 public class Answer {
+    @Setter
     private AnswerId id;
     private QuestionId questionId;
     private UserId userId;
