@@ -10,9 +10,9 @@ public class AnswerValidateService {
     private AnswerRepository answerRepository;
 
     public void isAnswerDuplicate(Answer answer) {
-        if (answerRepository.existsById(answer.getAnswerId())) {
+        if (answerRepository.existsById(answer.getId())) {
             throw new OwDuplicateException.HasDuplicateDataException("Answer.AnswerId"
-                    , String.valueOf(answer.getAnswerId().getValue()));
+                    , String.valueOf(answer.getId().getValue()));
         }
         if (answerRepository.existsByQuestionIdAndUserId(answer.getQuestionId(), answer.getUserId())) {
             throw new OwDuplicateException.HasDuplicateDataException("Answer.QuestionId & Answer.UserId"

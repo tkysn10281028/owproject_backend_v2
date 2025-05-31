@@ -8,8 +8,8 @@ public class UserValidateService {
     private UserRepository userRepository;
 
     public void isUserDuplicate(User user) {
-        if (userRepository.existsById(user.getUserId())) {
-            throw new OwDuplicateException.HasDuplicateDataException("User.UserId", user.getUserId().getValue());
+        if (userRepository.existsById(user.getId())) {
+            throw new OwDuplicateException.HasDuplicateDataException("User.UserId", user.getId().getValue());
         }
         if (userRepository.existsByName(user.getName())) {
             throw new OwDuplicateException.HasDuplicateDataException("User.name", user.getName());
